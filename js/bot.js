@@ -6,8 +6,8 @@ function sendMessage() {
   appendMessage('Вы', userInput);
   userCounter++;
 
-  const apiKey = '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'; // Replace with your actual OpenAI API key
-  const apiUrl = 'https://api.openai.com/v1/chat/completions';
+  const apiKey = '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'; // Replace with your actual OpenAI API key
+  const apiUrl = 'https://api.openai.com/v1/assistants';
 
   fetch(apiUrl, {
     method: 'POST',
