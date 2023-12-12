@@ -3,16 +3,17 @@ let aiCounter = 0;
 
 function sendMessage() {
   const userInput = document.getElementById('user-input').value;
-  appendMessage('Вы', userInput);
+  appendMessage('User', userInput);
   userCounter++;
 
-  // Замените 'YOUR_API_KEY' на ваш ключ API от OpenAI
-  const apiKey = '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';
-  const apiUrl = 'https://api.openai.com/v1/chat/completions';
+  const apiKey = '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'; // Замените на ваш настоящий ключ API OpenAI
+  const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
   axios.post(apiUrl, {
-    prompt: userInput,
-    max_tokens: 150,
+    messages: [
+      { role: 'system', content: 'You are a helpful assistant.' },
+      { role: 'user', content: userInput },
+    ],
   }, {
     headers: {
       'Content-Type': 'application/json',
@@ -20,14 +21,15 @@ function sendMessage() {
     },
   })
   .then(response => {
-    const aiResponse = response.data.choices[0].text.trim();
-    appendMessage('Sofiya', aiResponse);
+    const aiResponse = response.data.choices[0].message.content.trim();
+    appendMessage('Sofi', aiResponse);
     aiCounter++;
     updateCounters();
   })
   .catch(error => {
-    console.error('Error sending GPT-3 request:', error);
-    appendMessage('Sofiya', 'Error processing request');
+    console.error('Ошибка отправки запроса к GPT-3:', error);
+    console.error('Данные ответа:', error.response ? error.response.data : 'Н/Д');
+    appendMessage('Sofi', 'Ошибка обработки запроса');
     aiCounter++;
     updateCounters();
   });
@@ -45,6 +47,6 @@ function appendMessage(sender, message) {
 }
 
 function updateCounters() {
-  document.getElementById('user-counter').textContent = `User Messages: ${userCounter}`;
-  document.getElementById('ai-counter').textContent = `AI Messages: ${aiCounter}`;
+  document.getElementById('user-counter').textContent = `Сообщений от пользователя: ${userCounter}`;
+  document.getElementById('ai-counter').textContent = `Сообщений от Sofi: ${aiCounter}`;
 }
