@@ -3,7 +3,7 @@ let aiCounter = 0;
 
 function sendMessage() {
   const userInput = document.getElementById('user-input').value;
-  appendMessage('User', userInput);
+  appendMessage('Вы', userInput);
   userCounter++;
 
   const apiKey = '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'; // Replace with your actual OpenAI API key
