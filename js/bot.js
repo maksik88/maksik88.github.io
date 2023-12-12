@@ -6,34 +6,39 @@ function sendMessage() {
   appendMessage('User', userInput);
   userCounter++;
 
-  const apiKey = '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'; // Замените на ваш настоящий ключ API OpenAI
-  const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+  const apiKey = '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'; // Replace with your actual OpenAI API key
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
-  axios.post(apiUrl, {
-    messages: [
-      { role: 'system', content: 'You are a helpful assistant.' },
-      { role: 'user', content: userInput },
-    ],
-  }, {
+  fetch(apiUrl, {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${apiKey}`,
     },
+    body: JSON.stringify({
+      messages: [
+        { role: 'system', content: 'You are a helpful assistant.' },
+        { role: 'user', content: userInput },
+      ],
+    }),
   })
-  .then(response => {
-    const aiResponse = response.data.choices[0].message.content.trim();
+  .then(response => response.json())
+  .then(data => {
+    const aiResponse = data.choices[0].message.content.trim();
     appendMessage('Sofi', aiResponse);
     aiCounter++;
     updateCounters();
   })
   .catch(error => {
-    console.error('Ошибка отправки запроса к GPT-3:', error);
-    console.error('Данные ответа:', error.response ? error.response.data : 'Н/Д');
-    appendMessage('Sofi', 'Ошибка обработки запроса');
+    console.error('Error sending request to GPT-3:', error);
+    console.error('Response data:', error.response ? error.response.data : 'N/A');
+    appendMessage('Sofi', 'Error processing request');
     aiCounter++;
     updateCounters();
   });
 }
+
+// Rest of your code...
 
 function appendMessage(sender, message) {
   const chatMessages = document.getElementById('chat-messages');
