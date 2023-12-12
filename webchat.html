@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #a4bdd4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #chat-box {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #chat-messages {
+      max-height: 300px;
+      overflow-y: scroll;
+      border-bottom: 1px solid #ddd;
+      height: 300px;
+    }
+
+    #name-input,
+    #message-input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    #send-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .snowflake {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: snowfall linear infinite;
+      pointer-events: none;
+    }
+
+    .user-message {
+      color: #4caf50; /* Зеленый цвет для сообщений пользователя */
+    }
+
+    .other-message {
+      color: #2196f3; /* Синий цвет для сообщений других пользователей */
+    }
+
+    @keyframes snowfall {
+      0% {
+        transform: translate(-10px, -10px);
+      }
+      100% {
+        transform: translate(calc(100vw + 10px), calc(100vh + 10px));
+      }
+    }
+  </style>
+  <title>Простой онлайн чат</title>
+</head>
+<body>
+
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div> 
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div> 
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div> 
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div> 
+  <div class="snowflake"></div>
+  <div class="snowflake"></div>
+  <div class="snowflake"></div> 
+
+  <div id="chat-box">
+    <div id="error-message" class="error-message"></div>
+    <input type="text" id="name-input" placeholder="Введите ваше имя">
+    <div id="chat-messages"></div>
+    <input type="text" id="message-input" placeholder="Введите ваше сообщение">
+    <button id="send-btn" onclick="sendMessage()">Отправить</button>
+  </div>
+
+  <script>
+    // Получение имени пользователя из локального хранилища
+    var storedName = localStorage.getItem('chatName');
+    var nameInput = document.getElementById('name-input');
+    if (storedName) {
+      nameInput.value = storedName;
+    }
+
+    function getCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      return `${hours}:${minutes}`;
+    }
+
+    function showMessageError(message) {
+      var errorMessage = document.getElementById('error-message');
+      errorMessage.textContent = message;
+    }
+
+    function clearErrorMessage() {
+      var errorMessage = document.getElementById('error-message');
+      errorMessage.textContent = '';
+    }
+
+    function sendMessage() {
+      var name = nameInput.value.trim();
+      var messageInput = document.getElementById('message-input');
+      var message = messageInput.value.trim();
+
+      if (name === '') {
+        showMessageError('Пожалуйста, введите ваше имя.');
+        return;
+      }
+
+      clearErrorMessage();
+
+      if (message !== '') {
+        var chatMessages = document.getElementById('chat-messages');
+        var newMessage = document.createElement('div');
+        var timestamp = getCurrentTime();
+        
+        // Добавляем класс в зависимости от того, является ли сообщение пользователя или другого пользователя
+        newMessage.className = name === storedName ? 'user-message' : 'other-message';
+
+        newMessage.innerHTML = `<strong>${name}</strong> (${timestamp}): ${message}`;
+        chatMessages.appendChild(newMessage);
+
+        // Сохраняем имя пользователя в локальное хранилище
+        localStorage.setItem('chatName', name);
+
+        // Очищаем поле ввода сообщения
+        messageInput.value = '';
+
+        // Прокручиваем чат вниз, чтобы видеть последние сообщения
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    function createSnowflake() {
+      var snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      snowflake.style.left = `${Math.random() * window.innerWidth}px`;
+      snowflake.style.animationDuration = `${Math.random() * 2 + 1}s`; // Случайная продолжительность анимации
+      snowflake.style.animationDelay = `${Math.random()}s`; // Случайная задержка перед началом анимации
+      document.body.appendChild(snowflake);
+    }
+
+    // Генерация снежинок
+    for (var i = 0; i < 20; i++) {
+      createSnowflake();
+    }
+  </script>
+
+</body>
+</html>

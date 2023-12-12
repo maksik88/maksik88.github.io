@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.preload {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #77b3d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    z-index: 1001;
+}
+
+.cloud1,
+.cloud2,
+.cloud3 {
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    z-index: 1001;
+}
+
+.cloud1 {
+    top: 25%;
+    transform: translate(100%, -25%);
+    animation: clouds 5s ease infinite;
+}
+
+.cloud2 {
+    top: 50%;
+    transform: translate(100%, -50%);
+    animation: clouds 10s ease infinite;
+}
+
+.cloud3 {
+    top: 75%;
+    transform: translate(100%, -75%);
+    animation: clouds 15s ease infinite;
+}
+
+.airplane {
+    height: 200px;
+    animation: airplane 5s ease infinite alternate;
+}
+
+.preload h3 {
+    position: absolute;
+    top: 85%;
+    transform: translateY(-75%);
+    color: white;
+    font-size: 30px;
+    font-family: serif;
+}
+
+@keyframes airplane {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(50px);
+    }
+}
+
+@keyframes clouds {
+    from {
+        right: 0%;
+    }
+    to {
+        right: 230%;
+    }
+}
+
+.preload-finish {
+    opacity: 0;
+    pointer-events: none;
+}
+
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background: url(../img/gorod.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+html,
+body,
+header,
+#intro2 {
+    height: 100%;
+}
+
+#intro2 {
+    background: url(../img/header.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+html,
+body,
+header,
+#intro3 {
+    height: 100%;
+}
+
+#intro3 {
+    background: url(../img/about.webp) no-repeat center center fixed;
+    background-size: cover;
+}
+
+html,
+body,
+header,
+#intro4 {
+    height: 100%;
+}
+
+#intro4 {
+    background: url(../img/contact.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+header#news {
+    height: 100px;
+}
+
+.top-nav-collapse {
+    background-color: #2a96b1;
+}
+
+.logo21 {
+    height: 3%;
+    width: 3%;
+}
+
+.font {
+    font-size: medium;
+}
+
+.btnfos {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    margin: 0 auto 2em;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.btnfos-1 {
+    font-weight: 100;
+}
+
+.btnfos-1 svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 45px;
+}
+
+.btnfos-1 rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1;
+    stroke-dasharray: 422, 0;
+}
+
+.btnfos-1:hover {
+    letter-spacing: 1px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.btnfos-1:hover rect {
+    stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+
+/* display 3 */
+
+@media (min-width: 768px) {
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(33.333%);
+    }
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}
+
+.schedule {
+    margin-top: 25px;
+    border: 1px solid #2a96b1;
+    border-radius: 10px;
+}
+
+.schedule-text {
+    margin: 15px 0;
+    font-weight: 400 !important;
+}
+
+.header {
+    font-weight: 400;
+}
+
+.video_container {
+    position: relative;
+    align-items: center;
+}
+
+.video {
+    max-width: 1000px;
+    max-height: 800px;
+}
+
+.video_poster {
+    width: 60%;
+}
+
+.play-btn {
+    z-index: 1;
+    position: absolute;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    width: unset;
+    height: unset;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: unset;
+    padding: unset;
+}
+
+.map-container-3 {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-container-3 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.footer-color {
+    background-color: #2a96b1;
+}
+
+.news-carousel {
+    height: 550px;
+}
+
+@media (max-width: 1200px) {
+    .video {
+        max-width: 900px;
+        max-height: 600px;
+    }
+}
+
+@media (max-width: 992px) {
+    .play-btn {
+        max-width: 170px;
+    }
+}
+
+@media (max-width: 768px) {
+    .airplane {
+        height: 80px;
+        animation: airplane 3s ease infinite alternate;
+    }
+    .navbar:not(.top-nav-collapse) {
+        background: #2a96b1;
+    }
+    .logo21 {
+        height: 15%;
+        width: 15%;
+    }
+    .mobile-logo {
+        display: none;
+    }
+    h3.mob-head {
+        font-size: large;
+        font-weight: bold;
+    }
+    .video {
+        max-width: 700px;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video {
+        max-width: 500px;
+        max-height: 250px;
+    }
+}
+
+#admin {
+    height: 100%;
+    background-image: url(/img/news/Turkmenistan_Airlines_Boeing_737-800_green_Karakas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.textbox {
+    line-height: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#but_submit {
+    width: 100%;
+    color: white;
+    background-color: #2a96b1;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 0;
+}
+
+.admin-panel {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.menu-panel ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+.admin-items {
+    color: #fff;
+    background-color: #2a96b1;
+    border-radius: 5px;
+}
+
+#but_logout {
+    width: 100%;
+    color: #fff;
+    background-color:#2a96b1;
+    padding: 5px 0;
+}
+
+#but_logout_news {
+    width: 100%;
+    color: #fff;
+    background-color: red;
+    padding: 5px 0;
+    max-width: 500px;
+}
+
+.image-admin {
+    max-width: 250px;
+    max-height: 150px;
+}
+
+.image-schedule {
+    max-width: 100px;
+    max-height: 30px;
+}
+
+.edit-btn {
+    background-color: #1695D9;
+    color: white !important;
+}
+
+.delete-btn {
+    background-color: red;
+    color: #fff !important;
+}
+
+.add-btn {
+    background-color: #2a96b1;
+    color: #fff;
+}
+
+.add-form {
+    max-width: 900px;
+}
+
+.cargo {
+    display: flex;
+    justify-content: center;
+}
+
+.cargo__video {
+    width: 880px;
+    height: 500px;
+}
+
+
+marquee-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+    to {
+    transform: translateX(-100%);
+    }
+}
+@media(max-width:992px) {
+    .cargo__video {
+        max-width: 800px;
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media(max-width:768px) {
+    .cargo__video {
+        max-width: 500px;
+        width: 100%;
+        height: 300px;
+    }
+}

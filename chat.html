@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="chat.css">
+  <title>Smart Bot</title>
+</head>
+<body>
+
+  <div class="chat-container">
+    <div class="chat-header">Бот Sofi</div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your message...">
+      <button onclick="sendMessage()">Запрос</button>
+    </div>
+  </div>
+  <!-- Добавленные элементы для отображения счетчиков -->
+
+  <div class="counters">
+    <p id="user-counter">User Messages: 0</p>
+    <p id="ai-counter">Maksim Messages: 0</p>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/bot.js"></script>
+
+</body>
+</html>

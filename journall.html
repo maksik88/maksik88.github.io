@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jornal.css">
+    <title>Электронный журнал учителя</title>
+</head>
+<body>
+    <header>
+        <h1>Электронный журнал учителя</h1>
+        <h2 id="currentMonth" class="center">Месяц</h2>
+    </header>
+    <section>
+        <div class="button-container">
+            <button id="saveButton" class="save-button2">Сохранить</button>
+            <button id="saveToExcelButton" class="save-button">Сохранить в Excel</button>
+        </div>
+        <div class="grade-table-container">
+            <table id="gradeTable">
+                <!-- Таблица будет заполняться динамически с использованием JavaScript -->
+            </table>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="js/script3.js"></script>
+</body>
+</html>
+

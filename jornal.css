@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.section {
+    margin: 20px;
+}
+
+.grade-table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Добавление стилей для отображения оценок в ячейках */
+.grade-cell {
+    position: relative;
+}
+
+.grade-input {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+}
+
+.save-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+.save-button2:hover {
+    background-color: #45a049;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Стили для месяца над таблицей */
+#currentMonth {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.button-container {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.save-button2 {
+    margin-left: 10px;
+}
+
+
+/* Адаптивные стили */
+@media only screen and (max-width: 768px) {
+    .grade-input {
+        font-size: 12px;
+    }
+
+    .save-button {
+        font-size: 12px;
+    }
+}
