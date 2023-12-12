@@ -150,6 +150,11 @@
         
         // Добавляем класс в зависимости от того, является ли сообщение пользователя или другого пользователя
         newMessage.className = name === storedName ? 'user-message' : 'other-message';
+if (name !== storedName) {
+  // Добавить класс other-message, только если имя не совпадает с сохранённым
+  newMessage.classList.add('other-message');
+}
+
 
         newMessage.innerHTML = `<strong>${name}</strong> (${timestamp}): ${message}`;
         chatMessages.appendChild(newMessage);
