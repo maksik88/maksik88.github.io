@@ -54,3 +54,4 @@ function updateCounters() {
   document.getElementById('user-counter').textContent = `Сообщений от пользователя: ${userCounter}`;
   document.getElementById('ai-counter').textContent = `Сообщений от Sofi: ${aiCounter}`;
 }
+}
