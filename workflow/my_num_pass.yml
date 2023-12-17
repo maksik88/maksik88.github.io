@@ -1,0 +1,22 @@
+name: Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ваш_пример_работы:
+    runs-on: ubuntu-latest
+
+    env:
+      MY_NUM_PASS: ${{ secrets.MY_NUM_PASS }}
+
+    steps:
+      - name: Checkout репозитория
+        uses: actions/checkout@v2
+
+      - name: Ваша команда
+        run: |
+          # Тут ваш скрипт может обращаться к переменной окружения MY_NUM_PASS
+          echo "API Key: $MY_NUM_PASS"
