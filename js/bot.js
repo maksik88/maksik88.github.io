@@ -30,13 +30,12 @@ function sendMessage() {
     updateCounters();
   })
   .catch(error => {
-    console.error('Error sending request to GPT-3:', error);
     console.error('Error details:', error.message);
+    console.error('Error stack:', error.stack);
     appendMessage('Sofi', 'Error processing request');
     aiCounter++;
     updateCounters();
-  });
-}
+});
 
 // Rest of your code...
 
