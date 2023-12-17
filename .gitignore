@@ -1,1 +1,4 @@
-
+secrets.js
+module.exports = {
+  openaiApiKey: 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',
+};
