@@ -31,7 +31,7 @@ function sendMessage() {
   })
   .catch(error => {
     console.error('Error sending request to GPT-3:', error);
-    console.error('Response data:', error.response ? error.response.data : 'N/A');
+    console.error('Error details:', error.message);
     appendMessage('Sofi', 'Error processing request');
     aiCounter++;
     updateCounters();
