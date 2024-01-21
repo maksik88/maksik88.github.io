@@ -6,7 +6,7 @@ function sendMessage() {
   appendMessage('Вы', userInput);
   userCounter++;
 
-  const apiKey = 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; // Replace with your actual OpenAI API key
+  const apiKey = ; // Replace with your actual OpenAI API key
   const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
   fetch(apiUrl, {
