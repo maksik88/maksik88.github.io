@@ -19,6 +19,7 @@
   <p id="message"></p>
   
   <script>
+    Telegram.WebApp.ready();  // Инициализируем WebApp
     function requestKey(variant) {
       Telegram.WebApp.sendData(variant);  // Отправляем данные боту
       document.getElementById("message").innerText = "Запрос отправлен. Ожидайте ключ!";
