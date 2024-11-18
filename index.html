@@ -1,61 +1,108 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashoguz airport</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Jet Flights</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="Turkmenistan Airlines">
-            <h1>Dashoguz halkara howa menzeli</h1>
-        </div>
-        <div class="menu-icons">
-            <button><img src="search-icon.png" alt="Search"></button>
-            <button><img src="profile-icon.png" alt="Profile"></button>
-            <button><img src="menu-icon.png" alt="Menu"></button>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <div class="logo">JetFly</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="book-now">Book Now</button>
+      </nav>
+    </div>
+  </header>
 
-    <section class="flight-search">
-        <form>
-            <div>
-                <label for="from">Москва</label>
-                <input type="text" id="from" placeholder="MOW">
-            </div>
-            <div>
-                <label for="to">Ашхабад</label>
-                <input type="text" id="to" placeholder="ASB">
-            </div>
-            <div>
-                <label for="date">18.11.2024</label>
-                <input type="date" id="date">
-            </div>
-            <div>
-                <label for="class">Эконом</label>
-                <select id="class">
-                    <option>Эконом</option>
-                    <option>Бизнес</option>
-                </select>
-            </div>
-            <button type="submit">НАЙТИ</button>
-        </form>
-    </section>
+  <section class="hero">
+    <h1>Luxury Jet Flights</h1>
+    <p>Experience ultimate comfort and luxury in the skies.</p>
+    <button class="cta">Learn More</button>
+  </section>
 
-    <section class="news">
-        <h2>Новости</h2>
-        <div class="news-item">
-            <img src="plane.jpg" alt="Plane">
-            <p>Популярные маршруты из России</p>
-        </div>
-    </section>
+  <section id="features" class="features">
+    <div class="feature">
+      <img src="images/support.png" alt="Support">
+      <h3>24/7 Support</h3>
+      <p>We are always here to assist you.</p>
+    </div>
+    <div class="feature">
+      <img src="images/comfort.png" alt="Comfort">
+      <h3>Luxury Comfort</h3>
+      <p>Travel in style with top-class amenities.</p>
+    </div>
+    <div class="feature">
+      <img src="images/network.png" alt="Network">
+      <h3>Global Network</h3>
+      <p>Connecting you to destinations worldwide.</p>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <p>Свяжитесь с нами: +7 (812) 459-98-99</p>
-        <p>Email: avia@itmgroup.ru</p>
-        <p>Возврат: vozvrat@itmgroup.ru</p>
-    </footer>
+  <section id="about" class="about">
+    <h2>Why Choose Us?</h2>
+    <p>JetFly offers a seamless experience for business and leisure travelers.</p>
+    <div class="cards">
+      <div class="card">
+        <img src="images/card1.jpg" alt="Comfort">
+        <h3>Business Class</h3>
+        <p>Focus on your work while we handle your travel.</p>
+      </div>
+      <div class="card">
+        <img src="images/card2.jpg" alt="Luxury">
+        <h3>Luxury Trips</h3>
+        <p>Make every trip an unforgettable experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service">
+      <h3>Business Charters</h3>
+      <p>Professional and punctual services tailored for business needs.</p>
+    </div>
+    <div class="service">
+      <h3>Event Charters</h3>
+      <p>Perfect for group events and gatherings.</p>
+    </div>
+    <div class="service">
+      <h3>Medical Flights</h3>
+      <p>Rapid and reliable air ambulance services.</p>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>"The most comfortable flight I’ve ever experienced!"</p>
+      <span>- John D.</span>
+    </div>
+    <div class="testimonial">
+      <p>"A perfect solution for business travelers."</p>
+      <span>- Sarah L.</span>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="contact">
+      <h3>Contact Us</h3>
+      <p>Email: support@jetfly.com</p>
+      <p>Phone: +1 123 456 7890</p>
+    </div>
+    <p>© 2024 JetFly. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
