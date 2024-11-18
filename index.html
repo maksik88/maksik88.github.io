@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Key Request</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #333; color: white; }
-    h2 { color: white; }
-    .btn { padding: 10px 20px; margin: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-    .btn:disabled { background-color: #aaa; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashoguz airport</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Выберите вариант защиты:</h2>
-  <button class="btn" onclick="requestKey('Internet Security')">🌐 INTERNET SECURITY</button><br>
-  <button class="btn" onclick="requestKey('Smart Security')">🔒 Smart Security Premium</button><br>
-  <button class="btn" onclick="requestKey('Small Business Security')">🏢 Small Business Security</button><br>
-  <p id="message"></p>
-  
-  <script>
-    Telegram.WebApp.ready();  // Инициализируем WebApp
-    function requestKey(variant) {
-      Telegram.WebApp.sendData(variant);  // Отправляем данные боту
-      document.getElementById("message").innerText = "Запрос отправлен. Ожидайте ключ!";
-    }
-  </script>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Turkmenistan Airlines">
+            <h1>Dashoguz halkara howa menzeli</h1>
+        </div>
+        <div class="menu-icons">
+            <button><img src="search-icon.png" alt="Search"></button>
+            <button><img src="profile-icon.png" alt="Profile"></button>
+            <button><img src="menu-icon.png" alt="Menu"></button>
+        </div>
+    </header>
+
+    <section class="flight-search">
+        <form>
+            <div>
+                <label for="from">Москва</label>
+                <input type="text" id="from" placeholder="MOW">
+            </div>
+            <div>
+                <label for="to">Ашхабад</label>
+                <input type="text" id="to" placeholder="ASB">
+            </div>
+            <div>
+                <label for="date">18.11.2024</label>
+                <input type="date" id="date">
+            </div>
+            <div>
+                <label for="class">Эконом</label>
+                <select id="class">
+                    <option>Эконом</option>
+                    <option>Бизнес</option>
+                </select>
+            </div>
+            <button type="submit">НАЙТИ</button>
+        </form>
+    </section>
+
+    <section class="news">
+        <h2>Новости</h2>
+        <div class="news-item">
+            <img src="plane.jpg" alt="Plane">
+            <p>Популярные маршруты из России</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Свяжитесь с нами: +7 (812) 459-98-99</p>
+        <p>Email: avia@itmgroup.ru</p>
+        <p>Возврат: vozvrat@itmgroup.ru</p>
+    </footer>
 </body>
 </html>
