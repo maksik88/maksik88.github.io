@@ -1,108 +1,495 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxury Jet Flights</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DAŞOGUZ HALKARA HOWA MENZILI</title>
+    <link rel="shortcut icon" type="image/png" href="static/img/favicon.png">
+    <link href="static/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="static/Bootstrap-4-templates-master/full-page-image-carousel/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/Bootstrap-4-templates-master/full-page-image-carousel/css/mdb.min.css" rel="stylesheet">
+    <link href="static/Bootstrap-4-templates-master/full-page-image-carousel/css/style.min.css" rel="stylesheet">
+    <link href="css/styles1.css" rel="stylesheet">
+    <script src="js/clock.js" defer></script>
+    <script src="js/play.js" defer></script>
+    <script src="js/bootstrap.js" defer></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+
+
+    <style>
+        /* Основной стиль для адаптивности */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            padding: 5px 0;
+        }
+
+        .header-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .header-container img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .header-container p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Навигация */
+        .navbar {
+            justify-content: center;
+            background-color: white;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: black;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .dropdown-menu {
+            text-align: left;
+        }
+
+        /* Для адаптивности */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navbar-brand {
+                text-align: center;
+            }
+
+            .header-container img {
+                max-width: 80px;
+            }
+
+            .header-container p {
+                font-size: 12px;
+            }
+        }
+
+        /* Бегущая строка */
+        .news-scroll {
+            background-color: green;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .news-scroll marquee {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .news-scroll {
+                font-size: 14px;
+                padding: 5px;
+            }
+
+            .news-scroll marquee {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="logo">JetFly</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="book-now">Book Now</button>
-      </nav>
-    </div>
-  </header>
+<body class="grey lighten-3">
 
-  <section class="hero">
-    <h1>Luxury Jet Flights</h1>
-    <p>Experience ultimate comfort and luxury in the skies.</p>
-    <button class="cta">Learn More</button>
-  </section>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <!-- Левая часть -->
+            <div class="left-section">
+                <img src="static/img/unnamed.png" alt="Lachyn">
+                <p>DAŞOGUZ HALKARA HOWA MENZILI<br>&nbsp;DASHOGUZ INTERNATIONAL AIRPORT</p>
+            </div>
+            <!-- Центральная часть -->
+            <div class="center-section">
+                <div id="datetime">
+                    <p id="date-time"></p>
+                </div>
+                <div id="weather">
+                    <p id="weather-info"></p>
+                </div>
+            </div>
+            <!-- Правая часть -->
+            <div class="right-section">
+                <p>"PÄHIM-PAÝHAS UMMANY<br>&nbsp;&nbsp;MAGTYMGULY PYRAGY"</p>
+                <img src="static/img/sygar.png" alt="2024-nji ýylyň шygary">
+            </div>
+        </div>
+    </header>
 
-  <section id="features" class="features">
-    <div class="feature">
-      <img src="images/support.png" alt="Support">
-      <h3>24/7 Support</h3>
-      <p>We are always here to assist you.</p>
-    </div>
-    <div class="feature">
-      <img src="images/comfort.png" alt="Comfort">
-      <h3>Luxury Comfort</h3>
-      <p>Travel in style with top-class amenities.</p>
-    </div>
-    <div class="feature">
-      <img src="images/network.png" alt="Network">
-      <h3>Global Network</h3>
-      <p>Connecting you to destinations worldwide.</p>
-    </div>
-  </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <!-- Бренд -->
+            <a class="navbar-brand" href="index.html" style="color: green;font-size: 16px;">
+                Baş sahypa
+            </a>
+            <!-- Кнопка для адаптивного вида -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Ссылки навигации -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="hotel.html">Biz barada</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="online-tablo.html">Online tablo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://turkmenistanairlines.tm/ru">Bilet satyn almak</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ýolagçylara
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="online-schedule/index.html">Onlaýn tablo</a>
+                            <a class="dropdown-item" href="flights-schedule/index.html">Gatnawlar</a>
+                            <a class="dropdown-item" href="sab_dosmotr/index.html">Uçuşyň öň ýanyndaky barlag</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Hyzmatlarymyz
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="online-schedule/index.html">Onlaýn tablo</a>
+                            <a class="dropdown-item" href="flights-schedule/index.html">Gatnawlar</a>
+                            <a class="dropdown-item" href="sab_dosmotr/index.html">Uçuşyň öň ýanyndaky barlag</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Habarlaşmak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <section id="about" class="about">
-    <h2>Why Choose Us?</h2>
-    <p>JetFly offers a seamless experience for business and leisure travelers.</p>
-    <div class="cards">
-      <div class="card">
-        <img src="images/card1.jpg" alt="Comfort">
-        <h3>Business Class</h3>
-        <p>Focus on your work while we handle your travel.</p>
-      </div>
-      <div class="card">
-        <img src="images/card2.jpg" alt="Luxury">
-        <h3>Luxury Trips</h3>
-        <p>Make every trip an unforgettable experience.</p>
-      </div>
+    <!-- Бегущая строка -->
+    <div class="news-scroll">
+        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+            "Добро пожаловать на сайт Международного аэропорта Дашогуз"
+        </marquee>
     </div>
-  </section>
+    <!-- Постер с кнопками -->
+<section class="animated-poster">
+        <div class="sky">
+            <!-- Анимация облаков -->
+            <div class="clouds">
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="cloud cloud3"></div>
+            </div>
+            <!-- Самолет -->
+            <div class="plane"></div>
+        </div>
+        <!-- Три кнопки -->
+        <div class="poster-buttons">
+            <a href="online-tablo.html" class="btn btn-success btn-lg">Onlaýn tablo</a>
+            <a href="ticket-buy.html" class="btn btn-success btn-lg">Bilet satyn alyň</a>
+            <a href="schedule.html" class="btn btn-success btn-lg">Gatnaw meýilnamasy</a>
+        </div>
+</section>
+    
+<div>
+    <br><br><br><br><br><br>
+</div>
+    
 
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="service">
-      <h3>Business Charters</h3>
-      <p>Professional and punctual services tailored for business needs.</p>
+    <div class="flight-info">
+        <h1>Onlaýn tablo</h1>
+        
+        <!-- Таблица рейсов -->
+        <table id="flight-table">
+            <thead>
+                <tr>
+                    <th>Awiakompaniýa</th>
+                    <th>№ Gatnaw</th>
+                    <th>Ugur</th>
+                    <th>Gediş</th>
+                    <th>Geliş</th>
+                    <th>Terminal</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
-    <div class="service">
-      <h3>Event Charters</h3>
-      <p>Perfect for group events and gatherings.</p>
-    </div>
-    <div class="service">
-      <h3>Medical Flights</h3>
-      <p>Rapid and reliable air ambulance services.</p>
-    </div>
-  </section>
 
-  <section id="testimonials" class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial">
-      <p>"The most comfortable flight I’ve ever experienced!"</p>
-      <span>- John D.</span>
-    </div>
-    <div class="testimonial">
-      <p>"A perfect solution for business travelers."</p>
-      <span>- Sarah L.</span>
-    </div>
-  </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    function getCurrentDay() {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const currentDate = new Date();
+        return days[currentDate.getDay()];
+    }
 
-  <footer id="contact">
-    <div class="contact">
-      <h3>Contact Us</h3>
-      <p>Email: support@jetfly.com</p>
-      <p>Phone: +1 123 456 7890</p>
-    </div>
-    <p>© 2024 JetFly. All Rights Reserved.</p>
-  </footer>
+    function timeToDate(timeString) {
+        const [hours, minutes] = timeString.split(':').map(num => parseInt(num, 10));
+        const now = new Date();
+        now.setHours(hours);
+        now.setMinutes(minutes);
+        return now;
+    }
 
-  <script src="script.js"></script>
+    function fetchFlights() {
+        const currentDay = getCurrentDay();
+        fetch('flights.json')  // Загружаем файл flights.json
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#flight-table tbody');
+                tableBody.innerHTML = ''; // Очистить таблицу
+
+                const flightsForToday = data[currentDay];
+
+                if (flightsForToday && flightsForToday.length > 0) {
+                    flightsForToday.forEach(flight => {
+                        const currentTime = new Date();
+
+                        // Преобразуем строковое время в Date объекты
+                        const departureTime = timeToDate(flight.departure_time);
+                        const arrivalTime = timeToDate(flight.arrival_time);
+
+                        let status = flight.status;
+
+                        // Логика для автоматического обновления статуса
+                        if (currentTime > departureTime) {
+                            status = "Uçty";
+                        } else if (currentTime < departureTime) {
+                            status = "Wagtynda";
+                        }
+
+                        // Логика для закрытия регистрации за 20 минут до вылета
+                        const registrationCloseTime = new Date(departureTime.getTime() - 20 * 60000); // 20 минут до вылета
+                        const registrationOpenTime = new Date(departureTime.getTime() - 2 * 60 * 60000); // 2 часа до вылета
+
+                        if (currentTime > registrationCloseTime && currentTime < departureTime) {
+                            status = "Hasaba alyş ýapyldy";
+                        } else if (currentTime >= registrationOpenTime && currentTime <= registrationCloseTime) {
+                            status = "Hasaba alyş";
+                        }
+
+                        // Логика для автоматического обновления прилёта
+                        if (currentTime > arrivalTime) {
+                            status = "Goňdy";
+                        }
+
+                        // Учитываем задержку, если она есть
+                        if (flight.delay > 0) {
+                            status = `Delayed by ${flight.delay} min`;
+                        }
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td><img src="${flight.image_url}" alt="Airline Logo" class="airline-logo"></td>
+                            <td>${flight.flight_number} <br> ${flight.airline}</td>
+                            <td>${flight.route}</td>
+                            <td>${departureTime.toLocaleTimeString()}</td>
+                            <td>${arrivalTime.toLocaleTimeString()}</td>
+                            <td>${flight.terminal}</td>
+                            <td class="${status.startsWith('Delayed') ? 'delayed' : status === 'Registration Closed' ? 'closed' : status === 'Registration Open' ? 'open' : 'on-time'}">${status}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td colspan="7">No flights for today</td>`;
+                    tableBody.appendChild(row);
+                }
+            })
+            .catch(error => {
+                console.error('Error loading flight data:', error);
+            });
+    }
+
+    fetchFlights();
+    setInterval(fetchFlights, 60000); // Обновлять рейсы каждую минуту
+});
+
+    </script>
+<div>
+    <br><br>
+</div>
+<!-- Кнопка для открытия модального окна -->
+<!-- Секция с видео -->
+<div class="airport-video-section">
+    <h2>Howa menzilimiz barada video</h2>
+    
+    <!-- Контейнер для видео и кнопки Play -->
+    <div class="video-container">
+        <button id="play-button" class="play-button">
+            <img src="/free-icon-play-786430.png" alt="Play" class="play-icon"> Воспроизвести
+        </button>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <!-- Кнопка закрытия модального окна -->
+        <button id="closeModal" class="close-btn">Закрыть</button>
+        
+        <!-- Видео -->
+        <video id="airport-video" class="airport-video" controls>
+            <source src="/Песенка 'Азбука' [HD].mp4" type="video/mp4">
+            <source src="/20160521_104544.mp4" type="video/webm">
+            <source src="/20160521_104544.mp4" type="video/ogg">
+            Ваш браузер не поддерживает воспроизведение видео.
+        </video>
+    </div>
+</div>
+
+<!-- Секция новостей -->
+<section class="news-section">
+    <h2>HABARLAR</h2>
+    <div class="news-container">
+        <!-- Карточка новости 1 -->
+        <div class="news-card">
+            <img src="/belaviya.webp" alt="Новость 1" class="news-image">
+            <div class="news-content">
+                <h3 class="news-title">«Belawiýa» Türkmenbaşy bilen Minskiň arasyndaky uçuşlaryň sanyny köpeldýär</h3>
+                <p class="news-date">26 ноября 2024</p>
+                <p class="news-description"></p>
+                <a href="" class="btn btn-primary">Gineşleýin</a>
+            </div>
+        </div>
+        
+        <!-- Карточка новости 2 -->
+        <div class="news-card">
+            <img src="/astrahan.webp" alt="Новость 2" class="news-image">
+            <div class="news-content">
+                <h3 class="news-title">Russiýa Astrahan bilen Türkmenbaşynyň arasyndaky howa gatnawynyň açylmagyna gyzyklanma bildirýär</h3>
+                <p class="news-date">25 ноября 2024</p>
+                <p class="news-description"></p>
+                <a href="#" class="btn btn-primary">Gineşleýin</a>
+            </div>
+        </div>
+
+        <!-- Карточка новости 3 -->
+        <div class="news-card">
+            <img src="/turkmenkitay.webp" alt="Новость 3" class="news-image">
+            <div class="news-content">
+                <h3 class="news-title">Türkmen-hytaý hökümetara komitetiniň Ylmy-tehniki hyzmatdaşlyk boýunça kiçi komitetiniň ikinji mejlisi geçirildi</h3>
+                <p class="news-date">24 ноября 2024</p>
+                <p class="news-description"></p>
+                <a href="#" class="btn btn-primary">Gineşleýin</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="/5g.webp" alt="Новость 3" class="news-image">
+            <div class="news-content">
+                <h3 class="news-title">«Huawei» kompaniýasy Türkmenistanda 5G aragatnaşygyny ýola goýmagyň mümkinçiliklerini öwrenýär</h3>
+                <p class="news-date">24 ноября 2024</p>
+                <p class="news-description"></p>
+                <a href="#" class="btn btn-primary">Gineşleýin</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Collapsible Card -->
+<div class="collapsible-container">
+    <div class="collapsible-header">DAŞARY ÝURTDAKY WEKILLERMIZIŇ WE AGENTLARMYZYŇ HABARLAŞMAK ÜÇIN MAGLUMATLARY.</div>
+    <div class="collapsible-content">
+        <center>
+            <strong><span>RUSSIAN FEDERATION, MOSCOW</span></strong>
+            <span>
+                1119331 Street. Vernadsky Avenes<br>
+                St.of 29, Trade and office center "Leto floor" 18 office No.1811<br>
+                Tel/Fax +495276-27-59<br>
+                Mobile: +7968 759 23 17<br>
+                Email: <a href="mailto:russia@tua.aero">russia@tua.aero</a>
+            </span>
+        </center>
+        <center><span style="font-size: 14pt;">1119331 Street. Vernadsky Avenes<br>St.of 29, Trade and office center "Leto floor" 18 office No.1811<br>Tel/Fax +495276-27-59<br>Mobile: +7968 759 23 17<br>E-mail:russia@tua.aero<br><a href="mailto:tuarussia@gmail.com">tuarussia@gmail.com</a></span></center><center></center><center><span style="font-size: 14pt;"> <br><strong>TURKEY,ISTANBUL</strong></span></center><center></center><center></center><center></center><center></center>
+<p style="text-align: center;">Istanbul Havalimani Tayakdin Mah.<br>Terminal Cad.Havalimani Terminal binasi No:1/840318<br>Arnavutkoy 34283 / Istanbul Tel:+90212 465-01-60<br>Mobile: +90532 273 68 47 / 4658630<br>E-mail: turkey@tua.aero</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">GERMAN,FRANKFURT</span></strong></center>
+<p style="text-align: center;">Berlin StaBe 300b, 63065<br>Offenbach am Main | Germany<br>TEL: +4969 272-20-605<br>FAX: +4969 272-27-776<br>E-mail: germany@tua.aero</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">THAILAND, BANGKOK</span></strong></center>
+<p style="text-align: center;">2 Sol Romklao 38, 3rd Floor Harpers<br>Freight Building,Romklao Rd.,<br>Klongsampravej,Ladkrabang,<br>Bangkok 10520, Thailand<br>Tel: +662 635 06 03/05<br>Fax: +662 635 06 06<br>E-mail:thailand@tua.aero</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">UAE-ABU-DHABI</span></strong></center>
+<p style="text-align: center;">Khalidya Street Musabah.K.Al Mazrouei building, BLDG NO:C-116<br>FLAT:202, P.O.BOX:46350: 463550<br>Abu-Dhabi<br>Tel: +971(0)26327100<br>FAX: +971(2)26344486<br>E-mail: uae@tua.aero<br>cargot5auh@gmail.com</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">GREAT BRITAIN, LONDON</span></strong></center>
+<p style="text-align: center;">109, The Lightbox, 111 Power Rd<br>Chiswich, London W4 5PY, UK<br>Tel: +44774 344 0387<br>FAX: +44208 577-99-00.<br>E-mail: uk@tua.aero</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">KINGDOM OF SAUDI ARABIA, JEDDAH</span></strong></center>
+<p style="text-align: center;">Al-Madinah Al-Munawarah Rd,<br>GULF PLAZA Building<br>Tel: +966 9200 22 665 /<br>FAX: +966 9200 04 369<br>Mobile: +966 53 535 0804 |<br>Email: T5JED@favorite-ias.com</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">INDIA,DELHI</span></strong></center>
+<p style="text-align: center;">1102 Ashoka Estate (11th floor),<br>24 Barakhambaroad, Delhi 110001<br>Tel: +91 112 372-10-85, 372-10-87<br>Mobile: +91-11-41055591<br>Email: india@turkmenistanairlines.tm<br>t5.airlines.india@gmail.com</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">CHINA, BEIJING</span></strong></center>
+<p style="text-align: center;">Room 1506, building Block-C Van tong<br>Centre No.6 Chaowai Street,<br>Chaoyang Districh, Beijing, China<br>Tel: +8610 590 71 970, 590 71 627<br>Fax: +8610 590 73 228<br>E-mail: china@tua.aero</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">VIETNAM, HO CHI MINH</span></strong></center>
+<p style="text-align: center;">3rd Floor, 82 Vo Van Tan Street,<br>District3, Ho Chi Minh City, Vietnam<br>Mobile: +84 984 559 726 |<br>Email: dung.nguyenhanh@transviet.com</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">SOUTH KOREA, SEOUL</span></strong></center>
+<p style="text-align: center;">3F, E-PLAZA Bldg, 25 Sejong-daero 4-gil, Jung-gu, Seoul, 04527<br>Tel: +82-2-317-8820<br>Mobile: +82-10-5589-8271<br>Email: bkkoo@paagrp.co.kr</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">MALAYSIA, KUALA LUMPUR</span></strong></center>
+<p style="text-align: center;">2-2Jalan 1/76D Desa Pandan, 55100 Kuala Lumpur<br>Tel: +603-9207 4888<br>Mobile: +6012-494-7494<br>Fax: +603-9287 2323<br>E-mail:steven@skyaviationsvs.com</p>
+<div></div>
+<center><strong><span style="font-size: 14pt;">ITALY, MILAN</span></strong></center>
+<p style="text-align: center;">21010 Ferno (VA) Milan Malpensa<br>Airport T1<br>TEL: +39 02 7486 2334<br>Mobile: +39349 506 2322<br>Email: turkmenistan@edograf.com</p>
+</center>                </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+        header.addEventListener('click', function () {
+            const container = this.parentElement;
+            container.classList.toggle('open');
+        });
+    });
+</script>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Daşoguz International Airport</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="static/Bootstrap-4-templates-master/full-page-image-carousel/js/jquery-3.3.1.min.js"></script>
+    <script src="static/Bootstrap-4-templates-master/full-page-image-carousel/js/popper.min.js"></script>
+    <script src="static/Bootstrap-4-templates-master/full-page-image-carousel/js/bootstrap.min.js"></script>
+    <script src="static/Bootstrap-4-templates-master/full-page-image-carousel/js/mdb.min.js"></script>
 </body>
 </html>
