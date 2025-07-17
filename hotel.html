@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxuria Hotel - Premium Hospitality Experience</title>
+    <link rel="stylesheet" href="hotel.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Luxuria Hotel</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#rooms" class="nav-link">Rooms</a>
+                <a href="#amenities" class="nav-link">Amenities</a>
+                <a href="#dining" class="nav-link">Dining</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="book-now-btn">Book Now</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Luxuria Hotel</h1>
+            <p>Experience unparalleled luxury and comfort in the heart of the city</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Book Your Stay</button>
+                <button class="btn-secondary">Virtual Tour</button>
+            </div>
+        </div>
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="video/hotel-hero.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- Booking Widget -->
+    <section class="booking-widget">
+        <div class="container">
+            <form class="booking-form">
+                <div class="form-group">
+                    <label>Check-in</label>
+                    <input type="date" id="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-out</label>
+                    <input type="date" id="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label>Guests</label>
+                    <select id="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Room Type</label>
+                    <select id="roomtype">
+                        <option value="standard">Standard Room</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Executive Suite</option>
+                        <option value="presidential">Presidential Suite</option>
+                    </select>
+                </div>
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i> Search Rooms
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Luxury Redefined</h2>
+                    <p>Luxuria Hotel stands as a beacon of elegance and sophistication in the heart of the city. With over 50 years of hospitality excellence, we offer an unmatched experience that blends timeless luxury with modern comfort.</p>
+                    <p>Our commitment to exceptional service, attention to detail, and creating unforgettable memories makes us the preferred choice for discerning travelers worldwide.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <span>5-Star Luxury</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-concierge-bell"></i>
+                            <span>24/7 Concierge</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wifi"></i>
+                            <span>Free WiFi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="img/hotel-lobby.jpg" alt="Hotel Lobby">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="rooms">
+        <div class="container">
+            <h2 class="section-title">Our Rooms & Suites</h2>
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="img/standard-room.jpg" alt="Standard Room">
+                        <div class="room-overlay">
+                            <button class="view-room">View Details</button>
+                        </div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Standard Room</h3>
+                        <p>Comfortable and elegantly appointed room with city views</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-bath"></i> En-suite Bath</span>
+                            <span><i class="fas fa-tv"></i> Smart TV</span>
+                        </div>
+                        <div class="room-price">
+                            <span class="price">$299</span>
+                            <span class="per-night">per night</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="img/deluxe-room.jpg" alt="Deluxe Room">
+                        <div class="room-overlay">
+                            <button class="view-room">View Details</button>
+                        </div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Deluxe Room</h3>
+                        <p>Spacious room with premium amenities and stunning views</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-couch"></i> Seating Area</span>
+                            <span><i class="fas fa-wine-glass"></i> Mini Bar</span>
+                        </div>
+                        <div class="room-price">
+                            <span class="price">$449</span>
+                            <span class="per-night">per night</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="img/executive-suite.jpg" alt="Executive Suite">
+                        <div class="room-overlay">
+                            <button class="view-room">View Details</button>
+                        </div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Executive Suite</h3>
+                        <p>Luxurious suite with separate living area and executive privileges</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-home"></i> Living Room</span>
+                            <span><i class="fas fa-briefcase"></i> Work Desk</span>
+                            <span><i class="fas fa-cocktail"></i> Butler Service</span>
+                        </div>
+                        <div class="room-price">
+                            <span class="price">$799</span>
+                            <span class="per-night">per night</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="img/presidential-suite.jpg" alt="Presidential Suite">
+                        <div class="room-overlay">
+                            <button class="view-room">View Details</button>
+                        </div>
+                    </div>
+                    <div class="room-info">
+                        <h3>Presidential Suite</h3>
+                        <p>The pinnacle of luxury with panoramic views and exclusive amenities</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-crown"></i> Premium Suite</span>
+                            <span><i class="fas fa-swimming-pool"></i> Private Terrace</span>
+                            <span><i class="fas fa-user-tie"></i> Personal Butler</span>
+                        </div>
+                        <div class="room-price">
+                            <span class="price">$1,499</span>
+                            <span class="per-night">per night</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities">
+        <div class="container">
+            <h2 class="section-title">World-Class Amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>Infinity Pool</h3>
+                    <p>Rooftop infinity pool with breathtaking city skyline views</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Luxury Spa</h3>
+                    <p>Full-service spa offering rejuvenating treatments and wellness therapies</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Fitness Center</h3>
+                    <p>State-of-the-art fitness equipment and personal training services</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Valet Parking</h3>
+                    <p>Complimentary valet parking service for all guests</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Center</h3>
+                    <p>Fully equipped business center with meeting rooms and conference facilities</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Airport Transfer</h3>
+                    <p>Luxury airport transfer service available 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Section -->
+    <section id="dining" class="dining">
+        <div class="container">
+            <h2 class="section-title">Culinary Excellence</h2>
+            <div class="dining-options">
+                <div class="restaurant">
+                    <div class="restaurant-image">
+                        <img src="img/fine-dining.jpg" alt="Fine Dining Restaurant">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Azure Restaurant</h3>
+                        <p>Michelin-starred fine dining featuring contemporary cuisine crafted by renowned Chef Marcus Antoine. Experience culinary artistry in an elegant atmosphere.</p>
+                        <div class="restaurant-details">
+                            <span><i class="fas fa-clock"></i> Open: 6:00 PM - 11:00 PM</span>
+                            <span><i class="fas fa-utensils"></i> Cuisine: Contemporary European</span>
+                            <span><i class="fas fa-star"></i> Michelin Star</span>
+                        </div>
+                        <button class="reserve-btn">Make Reservation</button>
+                    </div>
+                </div>
+                <div class="restaurant">
+                    <div class="restaurant-image">
+                        <img src="img/rooftop-bar.jpg" alt="Rooftop Bar">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Sky Lounge</h3>
+                        <p>Sophisticated rooftop bar offering craft cocktails and panoramic city views. Perfect for evening relaxation with live jazz performances.</p>
+                        <div class="restaurant-details">
+                            <span><i class="fas fa-clock"></i> Open: 5:00 PM - 2:00 AM</span>
+                            <span><i class="fas fa-cocktail"></i> Specialty: Craft Cocktails</span>
+                            <span><i class="fas fa-music"></i> Live Jazz Nightly</span>
+                        </div>
+                        <button class="reserve-btn">Make Reservation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Guest Experiences</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Absolutely exceptional service and breathtaking accommodations. The attention to detail is remarkable, and the staff goes above and beyond to ensure a perfect stay."</p>
+                    <div class="testimonial-author">
+                        <img src="img/guest1.jpg" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <span>Business Executive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The presidential suite exceeded all expectations. The panoramic views, personalized service, and luxury amenities made our anniversary truly unforgettable."</p>
+                    <div class="testimonial-author">
+                        <img src="img/guest2.jpg" alt="Michael Chen">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <span>Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"From the moment we arrived, we were treated like royalty. The spa treatments were divine, and the rooftop dining experience was simply magical."</p>
+                    <div class="testimonial-author">
+                        <img src="img/guest3.jpg" alt="Emma Rodriguez">
+                        <div>
+                            <h4>Emma Rodriguez</h4>
+                            <span>Travel Blogger</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Experience luxury hospitality at its finest. Contact us to make a reservation or learn more about our exclusive services.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Luxury Boulevard<br>Metropolitan City, MC 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>reservations@luxuriahotel.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone Number">
+                            <select>
+                                <option>General Inquiry</option>
+                                <option>Reservation</option>
+                                <option>Event Planning</option>
+                                <option>Corporate Booking</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Luxuria Hotel</h3>
+                    <p>Where luxury meets exceptional service, creating unforgettable experiences for our distinguished guests.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#rooms">Rooms & Suites</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                        <li><a href="#dining">Dining</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Concierge</a></li>
+                        <li><a href="#">Room Service</a></li>
+                        <li><a href="#">Spa & Wellness</a></li>
+                        <li><a href="#">Business Center</a></li>
+                        <li><a href="#">Event Planning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@luxuriahotel.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Boulevard, Metropolitan City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxuria Hotel. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="hotel.js"></script>
+</body>
+</html>
